@@ -2,6 +2,7 @@ package com.douzone.springboot_helloworld;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 
 /**
  * 
@@ -26,7 +27,7 @@ public class HelloWorldApplication {
 		 *  5. ApplicationRunner 인터페이스를 구현한 빈을 Application Context에서 찾아서 실행
 		 *   
 		 */
-		SpringApplication.run(HelloWorldApplication.class, args);
+		try(ConfigurableApplicationContext ac = SpringApplication.run(HelloWorldApplication.class, args)){}
 	}
 
 }
